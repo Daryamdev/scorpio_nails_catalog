@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scorpio Nails</title>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'catalog/css/main.css' %}">
+
+</head>
+
+<body>
+
+
+
+    <div class="space-background">
+
+        <div id="stars-container"></div>
+
+    </div>
+
+
+
+    <header>
+
+        <h1>SCORPIO NAILS</h1>
+
+        <p class="subtitle">Premium Nail Products</p>
+
+    </header>
+
+
+
+    <main class="container">
+
+        <div class="card">
+
+            <h2>Gel Polishes</h2>
+
+            <p>Long lasting wear and vibrant colors.</p>
+            <a href="{% url 'gelpolish' %}" class="button">Explore Gel-Polishes </a>
+        </div>
+
+        <div class="card">
+
+            <h2>Base Coats</h2>
+
+            <p>Latex, camouflaging and hard base coats for perfect adhesion.</p>
+            <a href="{% url 'bases' %}" class="button">Explore Bases</a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Top Coats</h2>
+
+            <p>Glossy shine without chips and matte velvet finish.</p>
+            
+            <a href="{% url 'tops' %}" class="button">Explore Tops</a>
+</div>
+        
+
+        <div class="card">
+
+            <h2>Gels</h2>
+
+            <p>Gels for long-lasting wear.</p>
+            <a href="{% url 'gels' %}" class="button">Explore Gels</a>
+
+        </div>
+
+    </main>
+
+
+
+    <script src="{% static 'catalog/javascript/main.js' %}"></script>
+
+</body>
+
+</html> 

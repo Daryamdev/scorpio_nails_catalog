@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<a href="{% url 'home' %}" class="button">Back to Home</a>
+    <title>Scorpio Nails</title>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'catalog/css/main.css' %}">
+
+</head>
+
+<body>
+
+
+
+    <div class="space-background">
+
+        <div id="stars-container"></div>
+
+    </div>
+
+
+        
+    <header>
+
+        <h1>SCORPIO NAILS</h1>
+
+        <p class="subtitle">Premium Nail Products</p>
+           <div class="product-layout">
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="{% url 'home' %}" class="button">← Back to Main Page</a>
+    </div>
+
+    </header>
+<main class="container">
+        {% for product in products %}
+        <a href ="{% url 'description' product.pk %}">  </a>
+            <div class="card">
+                <h2>{{ product.title }}</h2>
+                <p>Category: {{ product.category.title }}</p>
+                <p>Price: {{ product.price }} €</p>
+                {% if product.in_stock %}
+                    <span class="stock-status">In Stock</span>
+                {% else %}
+                    <span class="stock-status out">Out of Stock</span>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>No products available...</p>
+        {% endfor %}
+    </main>
+    
+     <script src="{% static 'catalog/javascript/main.js' %}"></script>
+
+
+</body>
+
+</html> 

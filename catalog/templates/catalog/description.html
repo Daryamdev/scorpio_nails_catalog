@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.title }} | Scorpio Nails</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'catalog/css/main.css' %}">
+</head>
+<body>
+
+    <div class="space-background">
+        <div id="stars-container"></div>
+    </div>
+
+    <header>
+        <a href="javascript:history.back()" class="back-btn">← Back</a>
+        <h1>{{ product.title }}</h1>
+        <p class="subtitle">Category: {{ product.category.title }}</p>
+    </header>
+
+    <main class="container">
+    <div class="product-layout">
+        
+        
+        <div class="card price-card">
+            <div class="price-tag">{{ product.price }} €</div>
+            
+            {% if product.in_stock %}
+                <span class="stock-badge in-stock">● In Stock</span>
+            {% else %}
+                <span class="stock-badge out-stock">● Out of Stock</span>
+            {% endif %}
+        </div>
+
+        
+        <div class="card description-card">
+            <h2>About Product</h2>
+            <p class="description-text">
+                {{ product.description|default:"Exclusive formulation. Premium quality for professional performance." }}
+            </p>
+        </div>
+
+    </div>
+</main>
+
+    <script src="{% static 'catalog/javascript/main.js' %}"></script>
+</body>
+</html>

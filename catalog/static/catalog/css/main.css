@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #020307;
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: 
+        radial-gradient(circle at 50% 35%, rgba(15, 35, 75, 0.5) 0%, transparent 65%),
+        radial-gradient(circle at 15% 85%, rgba(40, 10, 65, 0.4) 0%, transparent 55%),
+        radial-gradient(circle at 85% 15%, rgba(10, 40, 85, 0.4) 0%, transparent 55%),
+        #020307;
+    pointer-events: none;
+}
+
+#stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.star {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    animation: twinkle var(--duration) infinite ease-in-out var(--delay);
+}
+
+.star.bright {
+    box-shadow: 0 0 12px #ffffff, 0 0 20px #70b5ff;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.6);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+        box-shadow: 0 0 12px #ffffff, 0 0 22px #a8d5ff;
+    }
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.8rem;
+    font-weight: 600;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #ffffff 0%, #d4e5ff 60%, #75b3ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(0, 150, 255, 0.6);
+}
+
+p.subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    color: #8daedc;
+    letter-spacing: 4px;
+    margin-top: 10px;
+}
+
+/* Контейнер главной страницы */
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Карточки главной и товаров */
+.card {
+    background: rgba(8, 15, 32, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(100, 180, 255, 0.25);
+    border-radius: 16px;
+    padding: 35px 22px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(14, 26, 54, 0.85);
+    border-color: rgba(120, 200, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 162, 255, 0.35);
+}
+
+.card h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.45rem;
+    color: #52bdff;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-family: 'Cinzel', serif;
+    color: #a4b7d9;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+/* Кнопка — по центру, ровная, без мусора */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: #52bdff;
+    text-decoration: none;
+    border: 1px solid rgba(82, 189, 255, 0.4);
+    border-radius: 8px;
+    background: rgba(10, 25, 50, 0.4);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.button:hover {
+    background: rgba(82, 189, 255, 0.2);
+    border-color: #52bdff;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(82, 189, 255, 0.4);
+}
+
+.explore {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+}
+
+/* Сетка карточки отдельного товара */
+.product-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    align-items: stretch;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.price-card {
+    padding: 30px;
+}
+
+.price-tag {
+    font-size: 2.2rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 15px;
+}
+
+.stock-badge {
+    font-size: 0.9rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.in-stock {
+    color: #4ef037;
+    background: rgba(78, 240, 55, 0.1);
+    border: 1px solid rgba(78, 240, 55, 0.3);
+}
+
+.out-stock {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px solid rgba(255, 77, 77, 0.3);
+}
+
+.description-card {
+    text-align: left;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.description-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.description-text {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .product-layout {
+        grid-template-columns: 1fr;
+    }
+}
