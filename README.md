@@ -17,12 +17,18 @@ A clean, responsive product catalog Django web application built for the Scorpio
 - **Database**: SQLite3
 - **CI/CD**: GitHub Actions
 
+**Screenshots**
+### Main Page
+![main page](1.png)
+![main page](2.png)
+![Django administration panel](3.png)
+
 ## 📦 Local Setup
 
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/YOUR_USERNAME/scorpio_nails_catalog.git](https://github.com/daryamdev/scorpio_nails_catalog.git)
-   
+
    cd scorpio_nails_catalog
    ```
 
