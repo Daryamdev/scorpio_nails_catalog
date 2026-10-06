@@ -19,9 +19,9 @@ A clean, responsive product catalog Django web application built for the Scorpio
 
 **Screenshots**
 ### Main Page
-![main page](1.png)
-![main page](2.png)
-![Django administration panel](3.png)
+![main page] (1.png)
+![main page2] (2.png)
+![Django administration panel] (3.png)
 
 ## 📦 Local Setup
 
