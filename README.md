@@ -17,6 +17,14 @@ A clean, responsive product catalog Django web application built for the Scorpio
 - **Database**: SQLite3
 - **CI/CD**: GitHub Actions
 
+## 📸 Screenshots
+
+![Main Page](1.png)
+
+![Catalog Page](2.png)
+
+![Admin Panel](3.png)
+
 
 ## 📦 Local Setup
 
